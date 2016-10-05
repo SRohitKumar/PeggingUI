@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { PeggingReviewComponent } from './pegging-review/pegging-review.component';
+import { PeggingResultsTable } from './pegging-review/PeggingResultsTable';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PeggingReviewComponent,
+    PeggingResultsTable,
+
+
   ],
   imports: [
     BrowserModule,

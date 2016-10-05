@@ -1,0 +1,137 @@
+.hidden {
+	display: none;
+}
+
+.showing {
+	display: block;
+}
+
+.whiteBackground {
+	background: white;
+}
+
+.smallPadding {
+	padding-bottom: 5px
+}
+
+.largePadding {
+	padding-bottom: 10px
+}
+
+.largePaddingTop {
+	padding-top: 10px
+}
+
+#skuSearch {
+	margin: 25px auto;
+}
+
+#fileDialog {
+	overflow: hidden
+}
+
+.outer {
+	width: 60px;
+}
+
+.inner {
+	width: 20px;
+	margin: 0 auto;
+}
+
+#Review h3 {
+	font-size: 20pt;
+	line-height: 1.5em;
+	margin: 0 0 1em 0;
+}
+
+/* * Clearfix: contain floats 
+* * For modern browsers */
+.clearfix:before,.clearfix:after {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+
+.clearfix:after {
+	clear: both;
+}
+/* * For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats. 
+*/
+.clearfix {
+	*zoom: 1;
+}
+
+/* button.reset{ */
+/*  background-image:url(../images/reset_white.png) no-repeat transparent 0 0; */
+/* } */
+button.icon {
+	padding-left: 24px;
+	line-height: 26px;
+	height: 26px;
+	background-color: #f4882f;
+	border: 1px solid #4a4a4a;
+	color: #fff;
+	font-weight: bold;
+}
+
+button.icon:hover {
+	background-color: #D05E00;
+}
+
+button.icon_reset {
+	background: url(../images/reset_white.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_download {
+	background: url(../images/download.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_back {
+	background: url(../images/back.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_search {
+	background: url(../images/view.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_adjust {
+	background: url(../images/move.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_review {
+	background: url(../images/next.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_edit {
+	background: url(../images/maintenance.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_add {
+	background: url(../images/add.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_calc {
+	background: url(../images/calc.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_upload {
+	background: url(../images/upload.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_check {
+	background: url(../images/ok.png) no-repeat 3px 5px #f4882f;
+}
+
+button.icon_delete {
+	background: url(../images/delete.png) no-repeat 3px 5px #f4882f;
+}
+.iconForPrepack{
+	background: url(../images/icon_List1.png) no-repeat 4px 1px;
+	display:inline-block;
+	width:20px;
+	height:18px;
+}
+.ui-dialog-titlebar.ui-widget-header.ui-corner-all.ui-helper-clearfix{
+	background:#CE6B1A;
+}

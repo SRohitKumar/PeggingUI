@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+      <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+      <title>Pegging</title>
+      <link type="text/css" href="app/css/THDstyle.css" rel="stylesheet" />
+      <link type="text/css" href="app/css/PeggingStyles.css" rel="stylesheet" />
+      <link type="text/css" href="app/css/custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+      <link type="text/css" href="app/css/ui.jqgrid.css" rel="stylesheet" />
+      <link type="text/less" href="app/css/PeggingStyles.less" rel="stylesheet"/>
+      <link type="text/css" href="app/css/jquery.alerts.css" rel="stylesheet"/>
+      <link rel="shortcut icon" href="app/images/THDlogo.ico" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <div id="thdWebApp" class="ieGrad" style="height: 758px;" >
+         <table id="header" border="0" width="100%">
+            <tr>
+               <td valign="top" nowrap="nowrap" class="brandBox">
+                  <table border="0" cellpadding="0" cellspacing="0">
+                     <tr>
+                        <td><a href="index.html" title="Go Home" style="border: 0px"><img src="" alt="Go Home" class="logo" width="57" height="57"/></a></td>
+                        <td nowrap="nowrap" style="vertical-align:center">
+                           <span style="position:relative; top:5px">
+                           <span id="appName">Transload Pegging</span><br/>
+                           <span id="appTagline">Built by The Home Depot</span>
+                           </span>
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+               <td align="right" nowrap="nowrap">
+                  <span class="login"><span id="username"></span>&nbsp; |&nbsp; <span id="logout"> <a href="#" onclick="window.open('','_self','');window.close();return false;" id="logoutlink" class="textLink">Logout</a></span></span>
+                  <br/>
+                  <button id="Help" class="icon ">Help</button>
+               </td>
+            </tr>
+         </table>
+         <div id="messageBar">
+            Pegging Inquiry
+         </div>
+         <div id="appBody" style="min-height: 400.4px;">
+            <button class="accordion , accordianBgColor" (click)="clicked($event)" ><b>Search</b></button>
+            <div >
+               <div [hidden]="!favoriteHero">
+                  <div id="search" class="accordianContent" style="height:100%;position: relative;">
+                     <div id="inputArea">
+                        <table align="right" width="50%" id=inputData1 style="padding-top:85px;float:left;">
+                           <tr align="center">
+                              <td width="auto" align="center">
+                                 <div>User ID: </div>
+                                 <input type="text" class=' posint-numeric' id="userID"  />
+                              </td>
+                              <td width="auto" align="center">
+                                 <div>Transload PO Due Date: </div>
+                                 <input id="TLDate" class="datefield" type="date" />
+                              </td>
+                           </tr>
+                           <tr align="center">
+                              <td width="auto" align="center">
+                                 <div>SOQ Request ID: </div>
+                                 <input type="text" class=' posint-numeric ' id="SOQNumber" onkeypress="return onlyNumbers();" />
+                              </td>
+                              <td width="auto" align="center">
+                                 <div>MVNDR: </div>
+
+                                 <select [ngModel]="selectedDeviceObj" (ngModelChange)="onChangeObj($event)" >
+                                 <option  [ngValue]="i" *ngFor="let i of deviceObjects">{{i}} </option>
+                                 </select>
+                              </td>
+                           </tr>
+                           <tr align="center">
+                              <td width="auto" align="center">
+                                 <div>PO Number:</div>
+                                 <input type="text" class=' posint-numeric' id="poNumber" onkeypress="return onlyNumbers();" />
+                              </td>
+                              <td width="auto" align="center">
+                                 <div>Request Status:</div>
+                                 <select id="statusSelect" style="width:150px;">
+                                    <option value="0" style="display:none;">none</option>
+                                    <option value="1" >Uploaded</option>
+                                    <option value="2" >In Containerization</option>
+                                    <option value="3" >In Containerization/ In Error</option>
+                                    <option value="4" >Open</option>
+                                    <option value="5" >In Error</option>
+                                    <option value="6" >Corrected</option>
+                                    <option value="7" >Locked</option>
+                                 </select>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td>
+                              </td>
+                              <td>
+                                 <table align="center">
+                                    <tr align="center">
+                                       <td width="auto" align="center" >
+                                          <div >Exclude Peg Processed</div>
+                                       </td>
+                                       <td>
+                                          <input type="checkbox" id="processedCheck" name="Exclude Peg Processed">
+                                       </td>
+                                    </tr>
+                                 </table>
+                              </td>
+                           </tr>
+                        </table>
+                        <div id="skuSearch" style="float:left;">
+                           <div>SKU List:</div>
+                           <textarea rows="15" cols="75" id="skuInput" onkeypress="return skuListRestrictions();" ></textarea>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <button class="accordion"><b>Research </b></button>
+            <pegging-results-table> </pegging-results-table>
+         </div>
+      </div>
+   </body>

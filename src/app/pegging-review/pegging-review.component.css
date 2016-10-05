@@ -1,0 +1,33 @@
+button.accordion {
+    background-color: #FF8C00;
+    color: #444;
+    cursor: pointer;
+    padding: 9px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    color: #fff;
+    background-image: -moz-linear-gradient(top, #e6781e, #c36619);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(230, 120, 30, 1)), color-stop(0.3, rgba(195, 102, 25, 1)));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6781e, endColorstr=#c36619);
+}
+
+div.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #f4882f;
+}
+
+div.panel.show {
+    display: block;
+}
+
+.accordianBgColor {
+    background-color: #FF8C00;
+    
+}
